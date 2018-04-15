@@ -1,0 +1,29 @@
+{
+  "languageModel": {
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "GetToast",
+        "samples": [
+          "for a toast",
+          "give us a toast",
+          "what's your favorite toast",
+          "start us off"
+        ],
+        "slots": []
+      }
+    ],
+    "invocationName": "toast chest"
+  }
+}
