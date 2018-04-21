@@ -16,7 +16,7 @@ def lambda_handler(event, context):
 
 
 def on_session_started(session_started_request, session):
-    pass
+    return get_welcome_response()
 
 
 def on_launch(launch_request, session):
@@ -38,7 +38,7 @@ def on_intent(intent_request, session):
 
 
 def on_session_ended(session_ended_request, session):
-    pass
+    return handle_session_end_request()
 
 
 def handle_session_end_request():
@@ -51,20 +51,14 @@ def handle_session_end_request():
 def get_welcome_response():
     session_attributes = {}
     card_title = "Toast Chest"
-    speech_output = ""
-    reprompt_text = ""
+    speech_output = "Welcome to the Toast Chest! Try saying: give me a toast."
+    reprompt_text = speech_output
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
 
-def get_toast(intent):
-    session_attributes = {}
-    card_title = "Toast Chest"
-    speech_output = ""
-    reprompt_text = ""
-    should_end_session = False
-    
+def get_toast(intent):  
     session_attributes = {}
     card_title = "Toast Chest"
     speech_output = ""
@@ -82,8 +76,10 @@ def get_toast(intent):
             speech_output += data.get('toast')
         else:
             speech_output = "Sorry, there was a problem. But here's to drinking away our problems, right?"
+            reprompt_text = "Try asking me again."
     else:
         speech_output = "Sorry, there was a problem. But here's to drinking away our problems, right?"
+        reprompt_text = "Try asking me again."
 
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
