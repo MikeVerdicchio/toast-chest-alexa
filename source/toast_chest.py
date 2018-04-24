@@ -71,14 +71,12 @@ def get_toast(intent):
         data = req.json()
             
         if data.get('toast'):
-            if data.get('explicit'):
-                speech_output = "This one will be a little explicit...\r\n"        
-            speech_output += data.get('toast')
+            speech_output = data.get('toast')
         else:
-            speech_output = "Sorry, there was a problem. But here's to drinking away our problems, right?"
+            speech_output = "Sorry, there was a problem."
             reprompt_text = "Try asking me again."
     else:
-        speech_output = "Sorry, there was a problem. But here's to drinking away our problems, right?"
+        speech_output = "Sorry, there was a problem."
         reprompt_text = "Try asking me again."
 
     return build_response(session_attributes, build_speechlet_response(
