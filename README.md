@@ -26,7 +26,7 @@ make
 
 You will also have to set two environment variables in your Lambda function:
 * APPLICATION_ID = your skill ID (from above)
-* API_ENDPOINT = http://www.mikeverdicchio.me/chest/random.json
+* API_ENDPOINT = http://chest.mikeverdicchio.me/random.json
 
 
 
@@ -34,4 +34,4 @@ License
 -------
 The material in this repository is released under a GNU General Public License v2.0.
 
-Copyright (c) 2018.
+Copyright (c) 2019.
