@@ -1,3 +1,6 @@
-env/*
+# Build directory
+dist/
 *.pyc
+
+# Output files
 toast.zip
