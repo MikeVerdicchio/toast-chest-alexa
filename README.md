@@ -29,7 +29,7 @@ make clean
 You will also have to set two environment variables in your Lambda function:
 
 - APPLICATION_ID = your skill ID (from above)
-- API_ENDPOINT = http://chest.mikeverdicchio.me/random.json
+- API_ENDPOINT = https://toast-chest-api.herokuapp.com
 
 ## License
 

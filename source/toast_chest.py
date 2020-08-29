@@ -80,7 +80,7 @@ def get_toast(intent):
 
     try:
         data = requests.get(API_ENDPOINT).json()
-        speech_output = data["toast"]
+        speech_output = data["Toast"]
     except Exception:
         speech_output = "Sorry, there was a problem."
         reprompt_text = "Try asking me again."
