@@ -1,14 +1,18 @@
 SHELL := /bin/bash
 
-build:
-	python3.6 -m venv env; \
-	source env/bin/activate; \
-	pip install -r requirements.txt; \
-	cd source; \
-	zip ../toast.zip toast_chest.py; \
-	cd ../env/lib/python3.6/site-packages; \
-	zip -g -r9 ../../../../toast.zip *;
+# Installs all production and development dependencies using pipenv
+install:
+	pipenv install --dev
 
+# Builds a production lambda-ready zip archive
+build: clean install
+	pipenv run pip install -r <(pipenv lock -r) --target dist/; \
+	zip -j toast.zip source/toast_chest.py; \
+	cd dist; \
+	zip -g -r9 ../toast.zip *
+
+# Cleanup directoy and builds
 clean:
-	rm -rf env
+	pipenv --rm
+	rm -rf dist
 	rm -f toast.zip
