@@ -4,3 +4,6 @@ dist/
 
 # Output files
 toast.zip
+
+# VS Code
+.vscode
