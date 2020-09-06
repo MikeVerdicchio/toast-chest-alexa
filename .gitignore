@@ -7,3 +7,6 @@ toast.zip
 
 # VS Code
 .vscode
+
+# Misc files
+.DS_Store

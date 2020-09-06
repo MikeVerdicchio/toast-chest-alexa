@@ -19,6 +19,9 @@ Keep note of your Application ID!
 # Installs all production and development dependencies using pipenv
 make install
 
+# Lints all source code
+make lint
+
 # Builds a production lambda-ready zip archive
 make build
 
