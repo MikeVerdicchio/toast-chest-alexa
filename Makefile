@@ -2,6 +2,7 @@ SHELL := /bin/bash
 
 # Installs all production and development dependencies using pipenv
 install:
+	pip install pipenv
 	pipenv install --dev
 
 # Lints all source code
@@ -19,7 +20,7 @@ build: clean install
 	zip -g -r9 ../toast.zip *
 
 # Cleanup directoy and builds
-clean:
-	pipenv --rm
+clean: setup
+	pipenv --rm || true
 	rm -rf dist
 	rm -f toast.zip
