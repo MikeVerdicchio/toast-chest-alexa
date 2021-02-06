@@ -20,7 +20,7 @@ build: clean install
 	zip -g -r9 ../toast.zip *
 
 # Cleanup directoy and builds
-clean: setup
+clean:
 	pipenv --rm || true
 	rm -rf dist
 	rm -f toast.zip
