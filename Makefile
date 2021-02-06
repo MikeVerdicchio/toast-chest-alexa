@@ -4,6 +4,13 @@ SHELL := /bin/bash
 install:
 	pipenv install --dev
 
+# Lints all source code
+lint: install
+	pipenv run mypy source
+	pipenv run isort source
+	pipenv run black source
+	pipenv run flake8 source
+
 # Builds a production lambda-ready zip archive
 build: clean install
 	pipenv run pip install -r <(pipenv lock -r) --target dist/; \

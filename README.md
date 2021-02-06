@@ -8,8 +8,6 @@ This repository contains the source code for an AWS Lambda Function for an Alexa
 
 To create the Alexa skill, you'll need the [interaction model](source/interaction_model.json), which contains the intents required. Feel free to edit the utterances as you'd like.
 
-Keep note of your Application ID!
-
 ## Building Deployment Package for AWS Lambda
 
 - Python 3.8
@@ -19,6 +17,9 @@ Keep note of your Application ID!
 # Installs all production and development dependencies using pipenv
 make install
 
+# Lints all source code
+make lint
+
 # Builds a production lambda-ready zip archive
 make build
 
@@ -26,9 +27,8 @@ make build
 make clean
 ```
 
-You will also have to set two environment variables in your Lambda function:
+You will also have to set an environment variable in your Lambda function:
 
-- APPLICATION_ID = your skill ID (from above)
 - API_ENDPOINT = https://toast-chest-api.herokuapp.com
 
 ## License
