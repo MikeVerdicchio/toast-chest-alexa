@@ -11,10 +11,10 @@ install:
 
 # Lints all source code
 lint: install
-	pipenv run mypy source
-	pipenv run isort source
-	pipenv run black source
-	pipenv run flake8 source
+	pipenv run mypy $(SOURCE_DIR)
+	pipenv run isort $(SOURCE_DIR)
+	pipenv run black $(SOURCE_DIR)
+	pipenv run flake8 $(SOURCE_DIR)
 
 # Builds a production lambda-ready zip archive
 build: clean-build
