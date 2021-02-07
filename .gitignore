@@ -3,10 +3,11 @@ dist/
 *.pyc
 
 # Output files
-toast.zip
+toast_chest.zip
 
 # VS Code
 .vscode
 
 # Misc files
 .DS_Store
+.mypy_cache/
