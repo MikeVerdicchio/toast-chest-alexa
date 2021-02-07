@@ -19,7 +19,7 @@ jobs:
           python-version: "3.8"
 
       - name: Build project
-        run: make build
+        run: make install && make build
 
       - name: Create Release
         id: create_release
